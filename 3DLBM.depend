@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1604854957 source:c:\users\roksi\desktop\3dlbm\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+
