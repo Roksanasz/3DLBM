@@ -3,7 +3,7 @@
 #include <string>
 
 using namespace std;
-const int L=15;
+const int L=20;
 float U[2][L][L][L], V[2][L][L][L], W[2][L][L][L], R[2][L][L];
 int F[L][L][L];
 const int ex[19] = {0,1,-1,0,0, 0,0,1,-1,-1,1, 1,1,-1,-1,0,0,0,0};
@@ -90,7 +90,7 @@ void LBMTau1 (int c)
 int main()
 {
     init();
-    for(int i=0; i<=10; i++)
+    for(int i=0; i<=1000; i+=10)
     {
         LBMTau1(0);
         LBMTau1(1);
@@ -99,15 +99,15 @@ int main()
 
 
  std::ofstream plik;
-    plik.open ("dane3D2.vtk", std::fstream::app);
+    plik.open ("dane3D3.vtk", std::fstream::app);
     plik<<  "# vtk DataFile Version 2.0" <<endl;
     plik << "KG NN0" <<endl;
     plik << "ASCII"<< endl;
     plik << "DATASET STRUCTURED_POINTS" << endl;
-    plik << "DIMENSIONS 15 15 15" << endl;
+    plik << "DIMENSIONS 20 20 20" << endl;
     plik << "ORIGIN 0 0 0" << endl;
     plik << "SPACING 1 1 1" << endl;
-    plik << "POINT_DATA 3750" << endl;
+    plik << "POINT_DATA 8000" << endl;
     plik << "VECTORS Vectors0 float" << endl;
 
 for    (int k=0; k<L; k++)
